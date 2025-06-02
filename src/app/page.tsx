@@ -1,35 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 
 export default function Home() {
-  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormStatus('sending');
-    
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    
-    try {
-      const response = await fetch('https://formsubmit.co/kevin@example.com', {
-        method: 'POST',
-        body: formData
-      });
-      
-      if (response.ok) {
-        setFormStatus('sent');
-        form.reset();
-        setTimeout(() => setFormStatus('idle'), 3000);
-      }
-    } catch (error) {
-      console.error('Fehler beim Senden:', error);
-      setFormStatus('idle');
-    }
-  };
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -50,10 +23,10 @@ export default function Home() {
             <span className="text-sky-500 animate-wiggle inline-block">Kevin</span>
           </h1>
           <p className="text-xl sm:text-2xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-200">
-            Ich helfe lokalen Unternehmen mit kleinen digitalen Tools – kostenlos, unkompliziert und persönlich.
+            Ich helfe lokalen Unternehmen mit kleinen digitalen Tools &ndash; kostenlos, unkompliziert und pers&ouml;nlich.
           </p>
           <a
-            href="mailto:kevin@example.com?subject=Anfrage%20für%20digitale%20Tools&body=Hallo,%0D%0A%0D%0AIch%20interessiere%20mich%20für%20Ihre%20kostenlosen%20digitalen%20Tools.%0D%0A%0D%0AMit%20freundlichen%20Grüßen"
+            href="mailto:kevin@example.com?subject=Anfrage%20f&uuml;r%20digitale%20Tools&amp;body=Hallo,%0D%0A%0D%0AIch%20interessiere%20mich%20f&uuml;r%20Ihre%20kostenlosen%20digitalen%20Tools.%0D%0A%0D%0AMit%20freundlichen%20Gr&uuml;&szlig;en"
             className="inline-block bg-sky-400 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:bg-sky-500 hover:scale-105 hover:shadow-2xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-sky-200 animate-fade-in-up delay-300 btn-glow"
           >
             Jetzt Kontakt aufnehmen
