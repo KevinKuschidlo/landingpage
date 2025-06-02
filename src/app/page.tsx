@@ -10,7 +10,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
           <div className="mb-8 animate-fade-in-up delay-100">
             <Image
-              src="/profile.png"
+              src="/profile.PNG"
               alt="Profilbild von Kevin"
               width={192}
               height={192}

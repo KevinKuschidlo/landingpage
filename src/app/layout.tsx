@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Kuschidlo.Kevin",
   description: "Digitale Tools für lokale Unternehmen – Kevin Kuschidlo",
   icons: {
-    icon: "/profile.png",
+    icon: "/profile.PNG",
   },
 };
 
